@@ -32,7 +32,7 @@ class Register extends React.Component {
 			alert('Email, password or name cannot be empty. Please try again.');
 			return console.log('Something went wrong, please try again')
 		} else {
-		fetch('http://localhost:3000/register', {
+		fetch('https://floating-lake-64261.herokuapp.com/register', {
 			method: 'post',
 			headers: {'Content-Type' : 'application/json'},
 			body: JSON.stringify({

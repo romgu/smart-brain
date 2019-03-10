@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import Particles from 'react-particles-js';
+import FaceRecognition from './component/FaceRecognition/FaceRecognition';
 import Navigation from './component/Navigation/Navigation';
+import SignIn from './component/SignIn/SignIn';
+import Register from './component/Register/Register';
 import Logo from './component/Logo/Logo';
 import ImageLinkForm from './component/ImageLinkForm/ImageLinkForm';
 import Rank from './component/Rank/Rank';
-import FaceRecognition from './component/FaceRecognition/FaceRecognition';
-import SignIn from './component/SignIn/SignIn';
-import Register from './component/Register/Register';
-import Particles from 'react-particles-js';
 import './App.css'
 
 import './App.css';
@@ -83,7 +83,7 @@ class App extends Component {
       return alert('Field cannot be empty');
     } else {
     this.setState({imageUrl: this.state.input});
-    fetch('http://localhost:3000/imageurl', {
+    fetch('https://floating-lake-64261.herokuapp.com/imageurl', {
       method: 'post',
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify({
@@ -93,7 +93,7 @@ class App extends Component {
     .then(response => response.json())
     .then(response => {
       if(response) {
-        fetch('http://localhost:3000/image', {
+        fetch('https://floating-lake-64261.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
